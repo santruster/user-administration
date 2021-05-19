@@ -1,0 +1,93 @@
+
+
+<div class="container">
+    <section class="section">      
+  
+      <div class="column is-full">
+        <form
+          [formGroup]="formulario"
+          (ngSubmit)="onSubmit(formulario)"
+          novalidate
+        >
+        <div class="control" *ngIf="image">          
+          <img src={{image}} />
+        </div>
+        
+          <div  class="image-upload">
+            <img [src]="imageSrc" style="max-width:300px;max-height:300px"/>
+            <input name="imageUrl" type="file" accept="image/*" (change)="handleInputChange($event)" />
+        </div>        
+         
+          <div class="control">
+            <mat-form-field appearance="fill">
+                <mat-label>Nro Usuario</mat-label>
+                <input formControlName="nrousu" matInput type="number">
+                <div class="error" *ngIf="formulario.get('nrousu').hasError('required')">
+                      Campo obligatorio
+                    </div>
+              </mat-form-field>
+          </div>
+          <div class="control">
+            <mat-form-field appearance="fill">
+                <mat-label>Usuario</mat-label>
+                <input formControlName="usuario" matInput >
+                <div class="error" *ngIf="formulario.get('usuario').hasError('required')">
+                    Campo obligatorio
+                    </div>
+              </mat-form-field>
+          </div>
+          <div class="control">           
+                <mat-label>Activo</mat-label><br>
+                <mat-radio-group formControlName="activo">
+                    <mat-radio-button value=true>SI</mat-radio-button>
+                    <mat-radio-button value=false>NO</mat-radio-button>
+                  </mat-radio-group>
+                <div class="error" *ngIf="formulario.get('activo').hasError('required')">
+                    Campo obligatorio
+                    </div>              
+          </div>
+          <div class="control">
+            <mat-form-field appearance="fill">
+                <mat-label>Clave</mat-label>
+                <input formControlName="clave" type="password" matInput >
+                <div class="error" *ngIf="formulario.get('clave').hasError('required')">
+                    Campo obligatorio
+                    </div>
+              </mat-form-field>
+          </div>
+          <div class="control">
+            <mat-form-field appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input formControlName="nombre" matInput >                
+            </mat-form-field>
+          </div>
+          <div class="control">
+            <mat-form-field appearance="fill">
+                <mat-label>Apellido</mat-label>
+                <input formControlName="apellido" matInput >               
+              </mat-form-field>
+          </div>
+          <div class="control">
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input formControlName="email" matInput >
+                <div class="error" *ngIf="formulario.get('email').hasError('required')">
+                    Campo obligatorio
+                    </div>
+              </mat-form-field>
+          </div>
+          <div class="control">
+            <mat-form-field appearance="fill">
+                <mat-label>Telefono</mat-label>
+                <input formControlName="telefono" matInput >                
+              </mat-form-field>
+          </div>
+          
+          <button mat-raised-button type="submit" color="primary" [disabled]="!formulario.valid" >Enviar</button>  
+          
+        </form>
+      </div>
+    </section> 
+   
+    
+  </div>

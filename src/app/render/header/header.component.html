@@ -1,0 +1,19 @@
+<p>
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <span>Administracion de usuarios</span>
+      </mat-toolbar-row>
+   
+        <mat-toolbar-row>
+          <button mat-button (click)="home()">Home</button>          
+          <span class="example-spacer"></span>
+          <button mat-button (click)="newUser()">Nuevo Usuario</button>          
+        </mat-toolbar-row>
+  </mat-toolbar>
+  </p>
+  <div *ngIf="!data.isNew; else elseBlock">
+    <app-user></app-user>
+  </div>
+  <ng-template #elseBlock>
+    <app-form-usuarios></app-form-usuarios>
+  </ng-template>

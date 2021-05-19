@@ -1,0 +1,28 @@
+form {
+    background: #fff;
+    padding: 26px;
+    border-radius: 5px;
+  }
+  
+  .control {
+    margin: 28px 0;
+  }
+  .error {
+    font-size: 11px;
+    color: red;
+  }
+  :host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+
+  .container  {
+    border: 1px solid black;
+    padding: 26px;
+    margin-left:40%;
+   }
+  

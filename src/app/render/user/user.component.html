@@ -1,0 +1,50 @@
+
+<table mat-table [dataSource]="dataSourceSorted" matSort class="mat-elevation-z8">
+
+  
+    <ng-container matColumnDef="nrousu">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> No. Usuario</th>
+      <td mat-cell *matCellDef="let element"> {{element.nrousu}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="usuario">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Usuario </th>
+      <td mat-cell *matCellDef="let element"> {{element.usuario}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="activo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Activo </th>
+      <td mat-cell *matCellDef="let element"> {{element.activo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+      </ng-container>
+
+      
+    <ng-container matColumnDef="apellido">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Apellido </th>
+        <td mat-cell *matCellDef="let element"> {{element.apellido}} </td>
+      </ng-container>
+
+    <ng-container matColumnDef="email" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element">
+           <a mat-icon-button matTooltip="Editar elemento" (click)="onEdit(element)">
+          <mat-icon>edit</mat-icon></a> 
+          <a mat-icon-button matTooltip="Eliminar elemento" (click)="onDelete(element)">
+            <mat-icon>delete</mat-icon></a> 
+      </td>
+      </ng-container>  
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  
